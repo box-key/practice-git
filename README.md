@@ -6,4 +6,4 @@
 * Hey!
 
 ## Practice rebase
-
+* `git rebase` is a way to merge branches
