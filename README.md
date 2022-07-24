@@ -10,3 +10,4 @@
 
 ## Notes
 * `tracking_branch` is a local branch which is tied to a remote branch. If I do `git pull` on a tracking branch, it automatically fetches from the remote branch and merges it to the local branch. To set up a remote branch, use `git branch -u origin/<remote_branch>` on a local branch that you want to be a tracking branch for `origin/<remote_branch>`
+* `<commit_hash>^` is used to refer to the parent of the commit. E.g., `HEAD^` refers to the parent of the `HEAD`. You can specify a number after the `^` to identify which parent you refer to, e.g., `HEAD^3` is the third parent of `HEAD`. `~` is the same..?
