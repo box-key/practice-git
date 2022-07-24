@@ -1,1 +1,1 @@
-print("Bad!"
+print("Good!")
