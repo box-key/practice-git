@@ -34,7 +34,27 @@ This approach completely rewrites a project history so you don't see the undo co
 
 Revert may be the **safest** approach among three as it does not rewrite the commit history. What it does is to make a new commit that brings back the changes specified. This revert commit as well as the changes specified will appear in the commit history.
 
-Note that `git revert` is used to undo a specific commit. So if you do `git revert HEAD~`, changes made in `HEAD` will be preserved
+Note that `git revert` is used to undo a specific commit. So if you do `git revert HEAD~`, changes made in `HEAD` will be preserved. For example,
+```bash
+$ echo "Hello!" >> hello1.txt
+$ git add hello1.txt
+$ git commit -m "Hello!"
+$ echo "Hello, again!" >> hello2.txt
+$ git add hello2.txt
+$ git commit -m "Hello, again!"
+$ echo "Hello, again and again!" >> hello3.txt
+$ git add hello3.txt
+$ git commit -m "Hello, again and again!"
+$ git log --oneline | head -n 3
+e1159ad Hello, again and again!
+3d5a042 Hello, again!
+4034c0f Hello!
+$ ls hello*.txt
+hello1.txt  hello2.txt  hello3.txt
+$ git revert 3d5a042
+$ ls hello*.txt
+hello1.txt  hello3.txt
+```
 
 ## Notes Misc.
 * `tracking_branch` is a local branch which is tied to a remote branch. If I do `git pull` on a tracking branch, it automatically fetches from the remote branch and merges it to the local branch. To set up a remote branch, use `git branch -u origin/<remote_branch>` on a local branch that you want to be a tracking branch for `origin/<remote_branch>`
