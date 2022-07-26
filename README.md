@@ -32,7 +32,9 @@ This approach completely rewrites a project history so you don't see the undo co
 1. Resolve conflict if any
 1. After resolving conflict, `git add . && git commit` to commit the changes
 
-Revert may be the **safest** approach as it does not rewrite the commit history. What it does is to make a new commit that brings back the changes specified. This revert commit as well as the changes specified will appear in the commit history.
+Revert may be the **safest** approach among three as it does not rewrite the commit history. What it does is to make a new commit that brings back the changes specified. This revert commit as well as the changes specified will appear in the commit history.
+
+Note that `git revert` is used to undo a specific commit. So if you do `git revert HEAD~`, changes made in `HEAD` will be preserved
 
 ## Notes Misc.
 * `tracking_branch` is a local branch which is tied to a remote branch. If I do `git pull` on a tracking branch, it automatically fetches from the remote branch and merges it to the local branch. To set up a remote branch, use `git branch -u origin/<remote_branch>` on a local branch that you want to be a tracking branch for `origin/<remote_branch>`
