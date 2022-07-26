@@ -26,6 +26,7 @@ This approach keeps the commits that you undid in a project history. So if you d
 1. `git reset --hard HEAD~<n>`. You can omit `n` if you want to undo the previous commit. Use `n` if you want to undo more commits, e.g., HEAD~3 refers to the third commits from the `HEAD`
 
 ### Revert Approach
+* Revert is cool!
 
 
 This approach completely rewrites a project history so you don't see the undo commits in `git log`
